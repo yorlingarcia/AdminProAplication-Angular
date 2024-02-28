@@ -5,7 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { NopageFoundComponent } from './pages/nopage-found/nopage-found.component';
+import { NopageFoundComponent } from './nopage-found/nopage-found.component';
 import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
