@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgChartsModule } from 'ng2-charts';
-
 import { AppRoutingModule } from '../app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
@@ -18,13 +16,7 @@ import { ComponentsModule } from '../components/components.module';
     PagesComponent,
     DashboardComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    AppRoutingModule,
-    ComponentsModule,
-    NgChartsModule,
-  ],
+  imports: [CommonModule, SharedModule, AppRoutingModule, ComponentsModule],
   exports: [
     ProgressComponent,
     Grafica1Component,
