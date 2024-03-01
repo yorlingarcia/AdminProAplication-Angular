@@ -37,98 +37,114 @@
           </div>
           <div class="r-panel-body">
             <ul id="themecolors" class="m-t-20">
-              <li><b>With Light sidebar</b></li>
+              <li><b>Con el sidebar claro</b></li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('default')"
                   data-theme="default"
-                  class="default-theme"
+                  class="selector default-theme"
+                  [class.working]="slectedtheme === 'default'"
                   >1</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('green')"
                   data-theme="green"
-                  class="green-theme"
+                  class="selector green-theme"
+                  [class.working]="slectedtheme === 'green'"
                   >2</a
                 >
               </li>
               <li>
-                <a href="javascript:void(0)" data-theme="red" class="red-theme"
+                <a
+                  (click)="changeTheme('red')"
+                  data-theme="red"
+                  class="selector red-theme"
+                  [class.working]="slectedtheme === 'red'"
                   >3</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('blue')"
                   data-theme="blue"
-                  class="blue-theme"
+                  class="selector blue-theme"
+                  [class.working]="slectedtheme === 'blue'"
                   >4</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('purple')"
                   data-theme="purple"
-                  class="purple-theme"
+                  class="selector purple-theme"
+                  [class.working]="slectedtheme === 'purple'"
                   >5</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('megna')"
                   data-theme="megna"
-                  class="megna-theme"
+                  class="selector megna-theme"
+                  [class.working]="slectedtheme === 'megna'"
                   >6</a
                 >
               </li>
-              <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+
+              <li class="d-block m-t-30"><b>Con el sidebar oscuro</b></li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('default-dark')"
                   data-theme="default-dark"
-                  class="default-dark-theme working"
+                  class="selector default-dark-theme"
+                  [class.working]="slectedtheme === 'default-dark'"
                   >7</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('green-dark')"
                   data-theme="green-dark"
-                  class="green-dark-theme"
+                  class="selector green-dark-theme"
+                  [class.working]="slectedtheme === 'green-dark'"
                   >8</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('red-dark')"
                   data-theme="red-dark"
-                  class="red-dark-theme"
+                  class="selector red-dark-theme"
+                  [class.working]="slectedtheme === 'red-dark'"
                   >9</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('blue-dark')"
                   data-theme="blue-dark"
-                  class="blue-dark-theme"
+                  class="selector blue-dark-theme"
+                  [class.working]="slectedtheme === 'blue-dark'"
                   >10</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('purple-dark')"
                   data-theme="purple-dark"
-                  class="purple-dark-theme"
+                  class="selector purple-dark-theme"
+                  [class.working]="slectedtheme === 'purple-dark'"
                   >11</a
                 >
               </li>
               <li>
                 <a
-                  href="javascript:void(0)"
+                  (click)="changeTheme('megna-dark')"
                   data-theme="megna-dark"
-                  class="megna-dark-theme"
+                  class="selector megna-dark-theme"
+                  [class.working]="slectedtheme === 'megna-dark'"
                   >12</a
                 >
               </li>
