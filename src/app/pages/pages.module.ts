@@ -9,6 +9,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     PagesComponent,
     DashboardComponent,
     AccountSettingsComponent,
+    PromesasComponent,
   ],
   imports: [CommonModule, SharedModule, AppRoutingModule, ComponentsModule],
   exports: [
