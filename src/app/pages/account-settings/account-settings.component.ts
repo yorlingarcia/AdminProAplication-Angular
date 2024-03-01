@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SettingsService } from '../../services/settings.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account-settings',
@@ -7,13 +8,13 @@ import { SettingsService } from '../../services/settings.service';
   styles: ``,
 })
 export class AccountSettingsComponent {
-  slectedtheme: string;
+  slectedtheme: string = '';
   constructor(private settingsService: SettingsService) {
     this.slectedtheme = this.settingsService.slectedtheme;
   }
 
   changeTheme(theme: string) {
-    const slectedtheme = this.settingsService.changeTheme(theme);
-    this.slectedtheme = this.settingsService.slectedtheme;
+    this.settingsService.changeTheme(theme);
+    this.slectedtheme = theme;
   }
 }

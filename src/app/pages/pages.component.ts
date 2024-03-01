@@ -9,19 +9,12 @@ declare function customInitFunctions(): any;
   styles: ``,
 })
 export class PagesComponent implements OnInit {
-  slectedtheme: string;
   constructor(private settingsService: SettingsService) {
-    this.slectedtheme = this.settingsService.slectedtheme;
+    this.settingsService;
   }
-
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     customInitFunctions();
-  }
-
-  changeTheme(theme: string) {
-    this.settingsService.changeTheme(theme);
-    this.slectedtheme = this.settingsService.slectedtheme;
   }
 }
