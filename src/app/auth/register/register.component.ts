@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario.service';
 import { SwalModal } from '../../config/swal.adapter';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,8 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService,
-    private swalModal: SwalModal
+    private swalModal: SwalModal,
+    private router: Router
   ) {}
 
   crearUsuario() {
@@ -40,8 +42,7 @@ export class RegisterComponent {
 
     this.usuarioService.crearUsuario(this.registerForm.value).subscribe(
       (resp) => {
-        console.log('Usuario creado');
-        console.log({ resp });
+        this.router.navigateByUrl('/');
       },
       (err) => {
         this.swalModal.modalFire('Error', err.error.message, 'error');
