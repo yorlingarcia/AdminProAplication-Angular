@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { LoginForm } from '../interfaces/login-form.interface';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 const base_url = environment.base_url;
 declare const google: any;
@@ -12,6 +13,8 @@ declare const google: any;
   providedIn: 'root',
 })
 export class UsuarioService {
+  public usuario!: User;
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -29,10 +32,15 @@ export class UsuarioService {
       })
       .pipe(
         tap((resp: any) => {
+          const { name, email, password, img, google, role, id } = resp.user;
+          this.usuario = new User(name, email, '', img, google, role, id);
           localStorage.setItem('token', resp.token);
         }),
         map((resp) => true),
-        catchError((err) => of(false))
+        catchError((err) => {
+          console.log({ errVT: err });
+          return of(false);
+        })
       );
   }
 
