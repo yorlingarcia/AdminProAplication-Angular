@@ -1,17 +1,22 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { RegisterForm } from '../interfaces/register-form.interface';
 import { environment } from '../../environments/environment';
 import { LoginForm } from '../interfaces/login-form.interface';
 import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 const base_url = environment.base_url;
-
+declare const google: any;
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private ngZone: NgZone
+  ) {}
 
   validateToken(): Observable<boolean> {
     const token = localStorage.getItem('token');
@@ -53,5 +58,14 @@ export class UsuarioService {
         localStorage.setItem('token', resp.token);
       })
     );
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    this.ngZone.run(() => {
+      this.router.navigateByUrl('/login');
+    });
+
+    // google.accounts.id.revoke('correo', () => {})
   }
 }

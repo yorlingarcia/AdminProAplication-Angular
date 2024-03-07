@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  NgZone,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
@@ -26,7 +32,8 @@ export class LoginComponent implements AfterViewInit {
     private router: Router,
     private fb: FormBuilder,
     private usuarioService: UsuarioService,
-    private swalModal: SwalModal
+    private swalModal: SwalModal,
+    private ngZone: NgZone
   ) {}
   ngAfterViewInit(): void {
     this.googleInit();
@@ -48,9 +55,12 @@ export class LoginComponent implements AfterViewInit {
 
   handleCredentialResponse(response: any) {
     // console.log('Encoded JWT ID token: ' + response.credential);
-    this.usuarioService
-      .loginGoogle(response.credential)
-      .subscribe((resp) => this.router.navigateByUrl('/'));
+    this.usuarioService.loginGoogle(response.credential).subscribe((resp) => {
+      // this.router.navigateByUrl('/');
+      this.ngZone.run(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
   }
 
   login() {
