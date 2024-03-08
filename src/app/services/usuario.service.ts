@@ -21,27 +21,46 @@ export class UsuarioService {
     private ngZone: NgZone
   ) {}
 
+  get token() {
+    return localStorage.getItem('token') || '';
+  }
+
+  get id() {
+    return this.usuario.id || '';
+  }
+
   validateToken(): Observable<boolean> {
-    const token = localStorage.getItem('token');
     return this.http
       .get(`${base_url}/login/renew`, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${this.token}`,
         },
       })
       .pipe(
-        tap((resp: any) => {
+        map((resp: any) => {
           const { name, email, password, img, google, role, id } = resp.user;
           this.usuario = new User(name, email, '', img, google, role, id);
           localStorage.setItem('token', resp.token);
+          return true;
         }),
-        map((resp) => true),
+        // map((resp) => true),
         catchError((err) => {
           console.log({ errVT: err });
           return of(false);
         })
       );
+  }
+
+  actualizarPerfil(data: { name: string; email: string; role: string }) {
+    console.log(this.token);
+
+    return this.http.put(`${base_url}/users/${this.id}`, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   crearUsuario(formData: RegisterForm) {

@@ -11,6 +11,8 @@ import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,15 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
+    PerfilComponent,
   ],
-  imports: [CommonModule, SharedModule, AppRoutingModule, ComponentsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    AppRoutingModule,
+    ComponentsModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     ProgressComponent,
     Grafica1Component,
