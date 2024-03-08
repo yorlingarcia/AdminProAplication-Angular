@@ -92,7 +92,5 @@ export class UsuarioService {
     this.ngZone.run(() => {
       this.router.navigateByUrl('/login');
     });
-
-    // google.accounts.id.revoke('correo', () => {})
   }
 }
