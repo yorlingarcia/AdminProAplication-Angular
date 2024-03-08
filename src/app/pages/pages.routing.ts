@@ -9,6 +9,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { authGuard } from '../guards/auth.guard';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
 
 const routes: Routes = [
   {
@@ -46,8 +47,26 @@ const routes: Routes = [
         component: PromesasComponent,
         data: { titulo: 'Promesas' },
       },
+
       { path: 'rxjs', component: RxjsComponent, data: { titulo: 'Rxjs' } },
       // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+
+      // Mantenimiento
+      {
+        path: 'usuarios',
+        component: UsuariosComponent,
+        data: { titulo: 'Usuarios' },
+      },
+      // {
+      //   path: 'medicos',
+      //   component: ,
+      //   data: { titulo: 'Medicos' },
+      // },
+      // {
+      //   path: 'hospitales',
+      //   component: ,
+      //   data: { titulo: 'Hospitales' },
+      // },
     ],
   },
 ];
