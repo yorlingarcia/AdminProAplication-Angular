@@ -61,7 +61,7 @@ export class PerfilComponent {
     };
   }
 
-  subirimagen() {
+  subirImagen() {
     this.fileUploadService
       .actualizarFoto(this.imagenSubir, 'users', this.usuario.id!)
       .then((img) => {

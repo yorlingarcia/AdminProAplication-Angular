@@ -55,8 +55,6 @@ export class UsuarioService {
   }
 
   actualizarPerfil(data: { name: string; email: string; role: string }) {
-    console.log(this.token);
-
     return this.http.put(`${base_url}/users/${this.id}`, data, this.headers);
   }
 
@@ -131,5 +129,13 @@ export class UsuarioService {
   eliminarUsuario(usuario: User) {
     const url = `${base_url}/users/${usuario.id}`;
     return this.http.delete(url, this.headers);
+  }
+
+  guardarUsuario(usuario: User) {
+    return this.http.put(
+      `${base_url}/users/${usuario.id}`,
+      usuario,
+      this.headers
+    );
   }
 }

@@ -12,7 +12,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
 
 @NgModule({
@@ -32,6 +32,7 @@ import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
     SharedModule,
     AppRoutingModule,
     ComponentsModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   exports: [

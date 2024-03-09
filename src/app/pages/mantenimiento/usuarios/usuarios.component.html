@@ -167,7 +167,7 @@
                 <th class="footable-sortable">
                   Email<span class="footable-sort-indicator"></span>
                 </th>
-                <th class="w100 footable-sortable">
+                <th class="w140 footable-sortable">
                   Role<span class="footable-sort-indicator"></span>
                 </th>
                 <th class="w100 footable-sortable">
@@ -182,7 +182,7 @@
               <tr class="footable-even" *ngFor="let usuario of usuarios">
                 <!-- Avatar -->
                 <td>
-                  <a href=""
+                  <a class="cursor" (click)="abrirModal(usuario)"
                     ><img
                       [src]="usuario.getImgUrl"
                       alt="user"
@@ -197,6 +197,16 @@
                 <td>{{ usuario.email }}</td>
                 <!-- Role -->
                 <td>{{ usuario.role }}</td>
+                <td>
+                  <select
+                    class="form-control"
+                    [(ngModel)]="usuario.role"
+                    (change)="cambiarRole(usuario)"
+                  >
+                    <option value="USER_ROLE">User</option>
+                    <option value="ADMIN_ROLE">Admin</option>
+                  </select>
+                </td>
                 <!-- Auth -->
                 <td>
                   <span *ngIf="usuario.google" class="label label-danger"
