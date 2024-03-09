@@ -26,6 +26,8 @@
                     placeholder="Search"
                     class="form-control form-control-line"
                     autocomplete="off"
+                    (keyup)="buscar(textBusqeda.value)"
+                    #textBusqeda
                   />
                 </div>
               </div>
@@ -34,13 +36,13 @@
         </div>
         <!-- fin search -->
         <!-- spinner -->
-        <div class="alert alert-info text-center">
+        <div *ngIf="cargando" class="alert alert-info text-center">
           <h4 class="alert-heading">Cargando</h4>
           <i class="fa fa-spin fa-refresh fa-2x"></i>
           <p class="mb-0">Por favor espere...</p>
         </div>
         <!-- fin de spinner -->
-        <div class="table-responsive">
+        <div *ngIf="!cargando" class="animated table-responsive">
           <div
             id="add-contact"
             class="modal fade in"
@@ -214,6 +216,7 @@
                   <button
                     type="button"
                     class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+                    (click)="eliminarUsuario(usuario)"
                   >
                     <i class="ti-close" aria-hidden="true"></i>
                   </button>
@@ -221,7 +224,7 @@
               </tr>
             </tbody>
             <tfoot>
-              <tr>
+              <tr *ngIf="textBusqeda.value.length === 0">
                 <td colspan="2">
                   <button
                     type="button"

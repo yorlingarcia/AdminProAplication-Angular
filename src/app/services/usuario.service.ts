@@ -127,4 +127,9 @@ export class UsuarioService {
       })
     );
   }
+
+  eliminarUsuario(usuario: User) {
+    const url = `${base_url}/users/${usuario.id}`;
+    return this.http.delete(url, this.headers);
+  }
 }
