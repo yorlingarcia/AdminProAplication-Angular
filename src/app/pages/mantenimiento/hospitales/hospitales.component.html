@@ -1,0 +1,155 @@
+<!-- <div class="row">
+  <div class="col-12">
+    <div class="alert alert-info text-center">
+      <h4 class="alert-heading">Cargando</h4>
+      <i class="fa fa-spin fa-refresh fa-2x"></i>
+      <p class="mb-0">Por favor espere...</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Hospitales registrados en mi aplicacion</h4>
+        <h6 class="card-subtitle">
+          {{ totalHospitales }} Hospitales registrados..
+        </h6>
+        <!-- Buscador... -->
+        <div class="m-t-2">
+          <div class="row">
+            <div class="col-4">
+              <div class="mr-auto form-horizontal form-material">
+                <!-- Search -->
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      class="form-control form-control-line"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5"></div>
+            <div class="col-3 text-right">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="abrirSwalAlert()"
+              >
+                <span><i class="fa fa-plus-circle"></i></span> Agregar Hospital
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- fin search -->
+        <!-- spinner -->
+        <div *ngIf="cargando" class="alert alert-info text-center">
+          <h4 class="alert-heading">Cargando</h4>
+          <i class="fa fa-spin fa-refresh fa-2x"></i>
+          <p class="mb-0">Por favor espere...</p>
+        </div>
+        <!-- fin de spinner -->
+        <div *ngIf="!cargando" class="table-responsive">
+          <table
+            id="demo-foo-addrow"
+            class="table m-t-5 table-hover contact-list footable-loaded footable"
+            data-page-size="10"
+          >
+            <thead>
+              <tr>
+                <th class="footable-sortable w100">
+                  Foto<span class="footable-sort-indicator"></span>
+                </th>
+                <th class="footable-sortable">
+                  Nombre<span class="footable-sort-indicator"></span>
+                </th>
+                <th class="footable-sortable w100">
+                  Acciones<span class="footable-sort-indicator"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="footable-even" *ngFor="let hospital of hospitales">
+                <!-- Foto -->
+                <td>
+                  <a class="cursor" (click)="abrirModal(hospital)"
+                    ><img
+                      [src]="hospital.img! | imagen : 'hospitals'"
+                      alt="hospital"
+                      width="40"
+                      class="img-circle"
+                    />
+                  </a>
+                </td>
+                <!-- Nombre -->
+                <td>
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Nombre del hospital"
+                    [(ngModel)]="hospital.name"
+                  />
+                </td>
+
+                <!-- Acciones -->
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+                    (click)="guardarCambios(hospital)"
+                  >
+                    <i class="fa fa-save" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+                    (click)="eliminarHospital(hospital)"
+                  >
+                    <i class="ti-close" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="7">
+                  <div class="text-right">
+                    <ul class="pagination">
+                      <li class="footable-page-arrow disabled">
+                        <a data-page="first" href="#first">«</a>
+                      </li>
+                      <li
+                        class="footable-page-arrow cursor"
+                        [class.disabled]="!prev"
+                      >
+                        <a data-page="prev" (click)="cargarHospitales(prev)"
+                          >Anterior</a
+                        >
+                      </li>
+                      <li
+                        class="footable-page-arrow cursor"
+                        [class.disabled]="!next"
+                      >
+                        <a data-page="next" (click)="cargarHospitales(prev)"
+                          >Siguiente</a
+                        >
+                      </li>
+                      <li class="footable-page-arrow disabled">
+                        <a data-page="last" href="#last">»</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
