@@ -4,6 +4,7 @@ import { Subscription, delay, map, of } from 'rxjs';
 import { Hospital } from '../../../models/hospital.model';
 import { ModalImagenService } from '../../../services/modal-imagen.service';
 import Swal from 'sweetalert2';
+import { BusquedasService } from '../../../services/busquedas.service';
 
 @Component({
   selector: 'app-hospitales',
@@ -23,7 +24,8 @@ export class HospitalesComponent implements OnInit, OnDestroy {
 
   constructor(
     private hospitalService: HospitalService,
-    private modalImagenService: ModalImagenService
+    private modalImagenService: ModalImagenService,
+    private busquedaService: BusquedasService
   ) {
     this.cargarHospitales();
   }
@@ -87,6 +89,18 @@ export class HospitalesComponent implements OnInit, OnDestroy {
 
   abrirModal(hospital: Hospital) {
     this.modalImagenService.abrirModal('hospitals', hospital.id!, hospital.img);
+  }
+
+  buscarHospitales(termino: string) {
+    if (termino.trim().length === 0) {
+      this.hospitales = this.tempHospitales;
+      return;
+    }
+    this.busquedaService
+      .buscar('hospitals', termino)
+      .subscribe((hospitales: Hospital[]) => {
+        this.hospitales = hospitales;
+      });
   }
 
   async abrirSwalAlert() {

@@ -29,6 +29,8 @@
                       placeholder="Search"
                       class="form-control form-control-line"
                       autocomplete="off"
+                      (keyup)="buscarHospitales(txtSearchHospital.value)"
+                      #txtSearchHospital
                     />
                   </div>
                 </div>
@@ -116,7 +118,7 @@
               </tr>
             </tbody>
             <tfoot>
-              <tr>
+              <tr *ngIf="txtSearchHospital.value.length === 0">
                 <td colspan="7">
                   <div class="text-right">
                     <ul class="pagination">
@@ -135,7 +137,7 @@
                         class="footable-page-arrow cursor"
                         [class.disabled]="!next"
                       >
-                        <a data-page="next" (click)="cargarHospitales(prev)"
+                        <a data-page="next" (click)="cargarHospitales(next)"
                           >Siguiente</a
                         >
                       </li>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { CargarHospitales } from '../interfaces/cargar-hospitales.interface';
 import { Hospital } from '../models/hospital.model';
+import { map } from 'rxjs';
 
 const base_url = environment.base_url;
 
