@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/trello-clone"
+  publish = "dist/adminpro"
   command = "npm run build"
 [[redirects]]
   from = "/*"
