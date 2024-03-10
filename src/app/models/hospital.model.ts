@@ -1,6 +1,6 @@
 interface _HospitalUSer {
   id: string;
-  namme: string;
+  name: string;
   img?: string;
 }
 

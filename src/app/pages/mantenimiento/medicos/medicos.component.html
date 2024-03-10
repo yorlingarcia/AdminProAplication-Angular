@@ -40,7 +40,7 @@
               <button
                 type="button"
                 class="btn btn-primary"
-                (click)="abrirSwalAlert()"
+                routerLink="/dashboard/medico/nuevo"
               >
                 <span><i class="fa fa-plus-circle"></i></span> Agregar Medico
               </button>
@@ -89,12 +89,7 @@
                 </td>
                 <!-- Nombre -->
                 <td>
-                  <input
-                    class="form-control"
-                    type="text"
-                    placeholder="Nombre del medico"
-                    [(ngModel)]="medico.name"
-                  />
+                  {{ medico.name }}
                 </td>
 
                 <!-- Acciones -->
@@ -102,9 +97,9 @@
                   <button
                     type="button"
                     class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                    (click)="guardarCambios(medico)"
+                    [routerLink]="['/dashboard', 'medico', medico.id]"
                   >
-                    <i class="fa fa-save" aria-hidden="true"></i>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
                   </button>
                   <button
                     type="button"
