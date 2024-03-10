@@ -102,7 +102,7 @@ export class HospitalesComponent implements OnInit, OnDestroy {
         this.hospitales = hospitales;
       });
   }
-
+  //crea un nuevo hospital
   async abrirSwalAlert() {
     const { value } = await Swal.fire({
       title: 'crear Hospital',
