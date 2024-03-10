@@ -9,13 +9,11 @@ import { User } from '../../models/user.model';
   styles: ``,
 })
 export class SidebarComponent {
-  public meniItems: any[];
   public usuario: User;
   constructor(
-    private sidebarService: SidebarService,
+    public sidebarService: SidebarService,
     private usuarioService: UsuarioService
   ) {
-    this.meniItems = sidebarService.menu;
     this.usuario = usuarioService.usuario;
   }
 

@@ -38,12 +38,17 @@ export class UsuarioService {
     };
   }
 
+  guardarLocalStorage(token: string, menu: any) {
+    localStorage.setItem('token', token);
+    localStorage.setItem('menu', JSON.stringify(menu));
+  }
+
   validateToken(): Observable<boolean> {
     return this.http.get(`${base_url}/login/renew`, this.headers).pipe(
       map((resp: any) => {
         const { name, email, password, img, google, role, id } = resp.user;
         this.usuario = new User(name, email, '', img, google, role, id);
-        localStorage.setItem('token', resp.token);
+        this.guardarLocalStorage(resp.token, resp.menu);
         return true;
       }),
       // map((resp) => true),
@@ -61,7 +66,7 @@ export class UsuarioService {
   crearUsuario(formData: RegisterForm) {
     return this.http.post(`${base_url}/users`, formData).pipe(
       tap((resp: any) => {
-        localStorage.setItem('token', resp.token);
+        this.guardarLocalStorage(resp.token, resp.menu);
       })
     );
   }
@@ -69,7 +74,7 @@ export class UsuarioService {
   loginUser(formData: LoginForm) {
     return this.http.post(`${base_url}/login`, formData).pipe(
       tap((resp: any) => {
-        localStorage.setItem('token', resp.token);
+        this.guardarLocalStorage(resp.token, resp.menu);
       })
     );
   }
@@ -77,13 +82,15 @@ export class UsuarioService {
   loginGoogle(token: string) {
     return this.http.post(`${base_url}/login/google`, { token }).pipe(
       tap((resp: any) => {
-        localStorage.setItem('token', resp.token);
+        this.guardarLocalStorage(resp.token, resp.menu);
       })
     );
   }
 
   logOut() {
+    //todo: borrar menu
     localStorage.removeItem('token');
+    localStorage.removeItem('menu');
     this.ngZone.run(() => {
       this.router.navigateByUrl('/login');
     });
