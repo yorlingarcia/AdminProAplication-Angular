@@ -10,7 +10,7 @@
         <div class="m-t-30">
           <img [src]="usuario.getImgUrl" class="img-circle" width="150" />
           <h4 class="card-title m-t-10">{{ usuario.name }}</h4>
-          <h6 class="card-subtitle">Accoubts Development</h6>
+          <h6 class="card-subtitle">Accounts Development</h6>
         </div>
       </div>
       <div>
@@ -137,6 +137,7 @@
                         class="form-control form-control-line"
                         name="example-role"
                         id="example-role"
+                        [readOnly]="usuario.role === 'USER_ROLE'"
                       />
                     </div>
                   </div>

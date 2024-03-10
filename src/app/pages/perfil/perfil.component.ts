@@ -42,7 +42,12 @@ export class PerfilComponent {
           'success'
         );
       },
-      (err) => this.swalModal.modalFire('Error', err.error.message, 'error')
+      (err) =>
+        this.swalModal.modalFire(
+          'Error',
+          err.error.message || err.error.error,
+          'error'
+        )
     );
   }
 
