@@ -1,0 +1,841 @@
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+  <!-- Column -->
+  <div class="col-lg-11 col-xlg-12 col-md-7">
+    <div class="card">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs profile-tab" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            data-toggle="tab"
+            href="#historialPagos"
+            role="tab"
+            >Historial de solicitud de pagos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            data-toggle="tab"
+            href="#solicitarPagos"
+            role="tab"
+            >Solicitar pagos</a
+          >
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!--one tab-->
+        <div class="tab-pane active" id="historialPagos" role="tabpanel">
+          <div class="card-body">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Data Export</h4>
+                <h6 class="card-subtitle">
+                  Export data to Copy, CSV, Excel, PDF &amp; Print
+                </h6>
+                <div class="table-responsive m-t-40">
+                  <div id="example23_wrapper" class="dataTables_wrapper">
+                    <div class="dataTables_length" id="myTable_length">
+                      <label
+                        >Show
+                        <select
+                          name="myTable_length"
+                          aria-controls="myTable"
+                          class=""
+                        >
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select>
+                        entries</label
+                      >
+                    </div>
+                    <div class="dt-buttons">
+                      <a
+                        class="dt-button buttons-copy buttons-html5"
+                        tabindex="0"
+                        aria-controls="example23"
+                        href="#"
+                        ><span>Copy</span></a
+                      ><a
+                        class="dt-button buttons-csv buttons-html5"
+                        tabindex="0"
+                        aria-controls="example23"
+                        href="#"
+                        ><span>CSV</span></a
+                      ><a
+                        class="dt-button buttons-excel buttons-html5"
+                        tabindex="0"
+                        aria-controls="example23"
+                        href="#"
+                        ><span>Excel</span></a
+                      ><a
+                        class="dt-button buttons-pdf buttons-html5"
+                        tabindex="0"
+                        aria-controls="example23"
+                        href="#"
+                        ><span>PDF</span></a
+                      ><a
+                        class="dt-button buttons-print"
+                        tabindex="0"
+                        aria-controls="example23"
+                        href="#"
+                        ><span>Print</span></a
+                      >
+                    </div>
+                    <div id="example23_filter" class="dataTables_filter">
+                      <label
+                        >Search:<input
+                          type="search"
+                          class=""
+                          placeholder=""
+                          aria-controls="example23"
+                      /></label>
+                    </div>
+                    <table
+                      id="example23"
+                      class="display nowrap table table-hover table-striped table-bordered dataTable"
+                      cellspacing="0"
+                      width="100%"
+                      role="grid"
+                      aria-describedby="example23_info"
+                      style="width: 100%"
+                    >
+                      <thead>
+                        <tr role="row">
+                          <th
+                            class="sorting_asc"
+                            tabindex="0"
+                            aria-controls="example23"
+                            rowspan="1"
+                            colspan="1"
+                            aria-sort="ascending"
+                            aria-label="Name: activate to sort column descending"
+                            style="width: 173px"
+                          >
+                            Name
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="example23"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Position: activate to sort column ascending"
+                            style="width: 255px"
+                          >
+                            Position
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="example23"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Office: activate to sort column ascending"
+                            style="width: 127px"
+                          >
+                            Office
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="example23"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Age: activate to sort column ascending"
+                            style="width: 62px"
+                          >
+                            Age
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="example23"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Start date: activate to sort column ascending"
+                            style="width: 115px"
+                          >
+                            Start date
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="example23"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Salary: activate to sort column ascending"
+                            style="width: 98px"
+                          >
+                            Salary
+                          </th>
+                        </tr>
+                      </thead>
+                      <tfoot>
+                        <tr>
+                          <th rowspan="1" colspan="1">Name</th>
+                          <th rowspan="1" colspan="1">Position</th>
+                          <th rowspan="1" colspan="1">Office</th>
+                          <th rowspan="1" colspan="1">Age</th>
+                          <th rowspan="1" colspan="1">Start date</th>
+                          <th rowspan="1" colspan="1">Salary</th>
+                        </tr>
+                      </tfoot>
+                      <tbody>
+                        <tr role="row" class="odd">
+                          <td class="sorting_1">Airi Satou</td>
+                          <td>Accountant</td>
+                          <td>Tokyo</td>
+                          <td>33</td>
+                          <td>2008/11/28</td>
+                          <td>$162,700</td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td class="sorting_1">Angelica Ramos</td>
+                          <td>Chief Executive Officer (CEO)</td>
+                          <td>London</td>
+                          <td>47</td>
+                          <td>2009/10/09</td>
+                          <td>$1,200,000</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td class="sorting_1">Ashton Cox</td>
+                          <td>Junior Technical Author</td>
+                          <td>San Francisco</td>
+                          <td>66</td>
+                          <td>2009/01/12</td>
+                          <td>$86,000</td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td class="sorting_1">Bradley Greer</td>
+                          <td>Software Engineer</td>
+                          <td>London</td>
+                          <td>41</td>
+                          <td>2012/10/13</td>
+                          <td>$132,000</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td class="sorting_1">Brenden Wagner</td>
+                          <td>Software Engineer</td>
+                          <td>San Francisco</td>
+                          <td>28</td>
+                          <td>2011/06/07</td>
+                          <td>$206,850</td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td class="sorting_1">Brielle Williamson</td>
+                          <td>Integration Specialist</td>
+                          <td>New York</td>
+                          <td>61</td>
+                          <td>2012/12/02</td>
+                          <td>$372,000</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td class="sorting_1">Bruno Nash</td>
+                          <td>Software Engineer</td>
+                          <td>London</td>
+                          <td>38</td>
+                          <td>2011/05/03</td>
+                          <td>$163,500</td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td class="sorting_1">Caesar Vance</td>
+                          <td>Pre-Sales Support</td>
+                          <td>New York</td>
+                          <td>21</td>
+                          <td>2011/12/12</td>
+                          <td>$106,450</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td class="sorting_1">Cara Stevens</td>
+                          <td>Sales Assistant</td>
+                          <td>New York</td>
+                          <td>46</td>
+                          <td>2011/12/06</td>
+                          <td>$145,600</td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td class="sorting_1">Cedric Kelly</td>
+                          <td>Senior Javascript Developer</td>
+                          <td>Edinburgh</td>
+                          <td>22</td>
+                          <td>2012/03/29</td>
+                          <td>$433,060</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div
+                      class="dataTables_info"
+                      id="example23_info"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      Showing 1 to 10 of 57 entries
+                    </div>
+                    <div
+                      class="dataTables_paginate paging_simple_numbers"
+                      id="example23_paginate"
+                    >
+                      <a
+                        class="paginate_button previous disabled"
+                        aria-controls="example23"
+                        data-dt-idx="0"
+                        tabindex="0"
+                        id="example23_previous"
+                        >Previous</a
+                      ><span
+                        ><a
+                          class="paginate_button current"
+                          aria-controls="example23"
+                          data-dt-idx="1"
+                          tabindex="0"
+                          >1</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="example23"
+                          data-dt-idx="2"
+                          tabindex="0"
+                          >2</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="example23"
+                          data-dt-idx="3"
+                          tabindex="0"
+                          >3</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="example23"
+                          data-dt-idx="4"
+                          tabindex="0"
+                          >4</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="example23"
+                          data-dt-idx="5"
+                          tabindex="0"
+                          >5</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="example23"
+                          data-dt-idx="6"
+                          tabindex="0"
+                          >6</a
+                        ></span
+                      ><a
+                        class="paginate_button next"
+                        aria-controls="example23"
+                        data-dt-idx="7"
+                        tabindex="0"
+                        id="example23_next"
+                        >Next</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="m-t-30">
+              Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+              arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+              justo. Nullam dictum felis eu pede mollis pretium. Integer
+              tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean
+              vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+              consequat vitae, eleifend ac, enim.
+            </p>
+          </div>
+        </div>
+        <!--second tab-->
+        <div class="tab-pane" id="solicitarPagos" role="tabpanel">
+          <div class="row">
+            <div class="col-12">
+              <div class="card-body">
+                <h4 class="card-title">
+                  Usuarios registrados en mi aplicacion
+                </h4>
+                <h6 class="card-subtitle">
+                  {{ "totalUsuarios }} Usuarios registrados.
+                </h6>
+                <!-- Buscador... -->
+                <div class="m-t-40">
+                  <div class="d-flex">
+                    <div class="mr-auto form-horizontal form-material">
+                      <!-- Search -->
+                      <div class="form-group">
+                        <div class="col-md-12">
+                          <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control form-control-line"
+                            autocomplete="off"
+                            #textBusqeda
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- fin search -->
+                <!-- spinner -->
+                <div class="alert alert-info text-center">
+                  <h4 class="alert-heading">Cargando</h4>
+                  <i class="fa fa-spin fa-refresh fa-2x"></i>
+                  <p class="mb-0">Por favor espere...</p>
+                </div>
+                <!-- fin de spinner -->
+                <div class="animated table-responsive">
+                  <div
+                    id="add-contact"
+                    class="modal fade in"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="myModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                          >
+                            ×
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel">
+                            Agregar solicitud de pago
+                          </h4>
+                        </div>
+                        <div class="modal-body">
+                          <form
+                            [formGroup]="solicitudForm"
+                            class="form-horizontal form-material"
+                          >
+                            <div class="form-group">
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="datetime-local"
+                                  formControlName="fechaHora"
+                                  class="form-control"
+                                  [(ngModel)]="fechaActual"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('fechaHora')?.invalid &&
+                                    solicitudForm.get('fechaHora')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  La fecha y hora son requeridas
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <select
+                                  formControlName="empresa"
+                                  class="form-control"
+                                >
+                                  <option value="">
+                                    Seleccione una empresa
+                                  </option>
+                                  <option value="USER_ROLE">User</option>
+                                  <option value="ADMIN_ROLE">Admin</option>
+                                </select>
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('empresa')?.invalid &&
+                                    solicitudForm.get('empresa')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  La empresa es requerida
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <select
+                                  formControlName="areaOperacion"
+                                  class="form-control"
+                                >
+                                  <option value="">
+                                    Seleccione una área de operación
+                                  </option>
+                                  <option value="USER_ROLE">User</option>
+                                  <option value="ADMIN_ROLE">Admin</option>
+                                </select>
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('areaOperacion')
+                                      ?.invalid &&
+                                    solicitudForm.get('areaOperacion')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  El área de operación es requerida
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <select
+                                  formControlName="dependencia"
+                                  class="form-control"
+                                >
+                                  <option value="">
+                                    Seleccione una dependencia
+                                  </option>
+                                  <option value="USER_ROLE">User</option>
+                                  <option value="ADMIN_ROLE">Admin</option>
+                                </select>
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('dependencia')?.invalid &&
+                                    solicitudForm.get('dependencia')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  La dependencia es requerida
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <select
+                                  formControlName="rubro"
+                                  class="form-control"
+                                >
+                                  <option value="">Seleccione un rubro</option>
+                                  <option value="USER_ROLE">User</option>
+                                  <option value="ADMIN_ROLE">Admin</option>
+                                </select>
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('rubro')?.invalid &&
+                                    solicitudForm.get('rubro')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  El rubro es requerido
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <select
+                                  formControlName="tipo"
+                                  class="form-control"
+                                >
+                                  <option value="">Seleccione un tipo</option>
+                                  <option value="USER_ROLE">User</option>
+                                  <option value="ADMIN_ROLE">Admin</option>
+                                </select>
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('tipo')?.invalid &&
+                                    solicitudForm.get('tipo')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  El tipo es requerido
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="number"
+                                  formControlName="identificacion"
+                                  class="form-control"
+                                  placeholder="Identificación"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('identificacion')
+                                      ?.invalid &&
+                                    solicitudForm.get('identificacion')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  La identificación es requerida
+                                </div>
+                                <span> Agregar uno nuevo</span>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="text"
+                                  formControlName="concepto"
+                                  class="form-control"
+                                  placeholder="Concepto"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('concepto')?.invalid &&
+                                    solicitudForm.get('concepto')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  El concepto es requerido
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <select
+                                  formControlName="placa"
+                                  class="form-control"
+                                >
+                                  <option value="">Seleccione una placa</option>
+                                  <option value="USER_ROLE">User</option>
+                                  <option value="ADMIN_ROLE">Admin</option>
+                                </select>
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('placa')?.invalid &&
+                                    solicitudForm.get('placa')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  La placa es requerida
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="number"
+                                  formControlName="valorOperacion"
+                                  class="form-control"
+                                  placeholder="Valor de la operación"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('valorOperacion')
+                                      ?.invalid &&
+                                    solicitudForm.get('valorOperacion')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  El valor de la operación es requerido
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="file"
+                                  formControlName="factura"
+                                  class="form-control"
+                                  placeholder="Factura"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('factura')?.invalid &&
+                                    solicitudForm.get('factura')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  La factura es requerida
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="text"
+                                  formControlName="observaciones"
+                                  class="form-control"
+                                  placeholder="Observaciones"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('observaciones')
+                                      ?.invalid &&
+                                    solicitudForm.get('observaciones')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  Las observaciones son requeridas
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-info waves-effect"
+                            (click)="guardarSolicitud()"
+                          >
+                            Guardar
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-default waves-effect"
+                            data-dismiss="modal"
+                          >
+                            Cancelar
+                          </button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <table
+                    id="demo-foo-addrow"
+                    class="table m-t-30 table-hover contact-list footable-loaded footable table-responsive"
+                    data-page-size="10"
+                  >
+                    <thead>
+                      <tr>
+                        <th class="w100 footable-sortable">
+                          Fecha<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="footable-sortable">
+                          Empresa<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="footable-sortable">
+                          Área de operación<span
+                            class="footable-sort-indicator"
+                          ></span>
+                        </th>
+                        <th class="w140 footable-sortable">
+                          Dependencia<span
+                            class="footable-sort-indicator"
+                          ></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Rubro<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Tipo<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Identificación<span
+                            class="footable-sort-indicator"
+                          ></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Nombre proveedor / empleado<span
+                            class="footable-sort-indicator"
+                          ></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Concepto<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Placa<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Valor operación<span
+                            class="footable-sort-indicator"
+                          ></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Factura<span class="footable-sort-indicator"></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Observaciones<span
+                            class="footable-sort-indicator"
+                          ></span>
+                        </th>
+                        <th class="w100 footable-sortable">
+                          Acciones<span class="footable-sort-indicator"></span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="footable-even">
+                        <!-- Fecha -->
+                        <td></td>
+                        <!-- Empresa -->
+                        <td></td>
+                        <!-- Área de operación -->
+                        <td></td>
+                        <!-- Dependencia -->
+                        <td></td>
+                        <!-- Rubro -->
+                        <td></td>
+                        <!-- Tipo -->
+                        <td></td>
+                        <!-- Identificación -->
+                        <td></td>
+                        <!-- Nombre proveedor / empleado -->
+                        <td></td>
+                        <!-- Concepto -->
+                        <td></td>
+                        <!-- Placa -->
+                        <td></td>
+                        <!-- Valor operación -->
+                        <td></td>
+                        <!-- Factura -->
+                        <td></td>
+                        <!-- Observaciones -->
+                        <td></td>
+                        <!-- Acciones -->
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+                          >
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+                          >
+                            <i class="ti-close" aria-hidden="true"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr *ngIf="textBusqeda.value.length === 0">
+                        <td colspan="2">
+                          <button
+                            type="button"
+                            class="btn btn-info btn-rounded"
+                            data-toggle="modal"
+                            data-target="#add-contact"
+                          >
+                            Nueva solicitud de pago
+                          </button>
+                        </td>
+
+                        <td colspan="2">
+                          <button
+                            type="button"
+                            class="btn btn-success btn-rounded"
+                          >
+                            Enviar solicitudes de pago
+                          </button>
+                        </td>
+                        <td colspan="7">
+                          <div class="text-right">
+                            <ul class="pagination">
+                              <li class="footable-page-arrow disabled">
+                                <a data-page="first">«</a>
+                              </li>
+                              <li
+                                class="footable-page active"
+                                style="cursor: pointer"
+                              >
+                                <a data-page="0">Anterior</a>
+                              </li>
+                              <li class="footable-page" style="cursor: pointer">
+                                <a data-page="1">Siguiente</a>
+                              </li>
+
+                              <li class="footable-page-arrow disabled">
+                                <a data-page="last" href="#last">»</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Column -->
+  </div>
+  <!-- Row -->
+  <!-- ============================================================== -->
+  <!-- End PAge Content -->
+  <!-- ============================================================== -->
+</div>

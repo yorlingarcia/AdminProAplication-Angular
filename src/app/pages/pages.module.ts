@@ -19,6 +19,9 @@ import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { MedicoComponent } from './mantenimiento/medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { TesoreriaComponent } from './depedencia/tesoreria/tesoreria.component';
+import { MantenimientoComponent } from './depedencia/mantenimiento/mantenimiento.component';
+import { DireccionFinancieraComponent } from './depedencia/direccion-financiera/direccion-financiera.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     MedicosComponent,
     MedicoComponent,
     BusquedaComponent,
+    TesoreriaComponent,
+    MantenimientoComponent,
+    DireccionFinancieraComponent,
   ],
   imports: [
     CommonModule,

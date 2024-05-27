@@ -16,6 +16,9 @@ import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.compo
 import { MedicoComponent } from './mantenimiento/medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { adminGuard } from '../guards/admin.guard';
+import { DireccionFinancieraComponent } from './depedencia/direccion-financiera/direccion-financiera.component';
+import { MantenimientoComponent } from './depedencia/mantenimiento/mantenimiento.component';
+import { TesoreriaComponent } from './depedencia/tesoreria/tesoreria.component';
 
 const childRoutes: Routes = [
   {
@@ -72,6 +75,21 @@ const childRoutes: Routes = [
     path: 'buscar/:termino',
     component: BusquedaComponent,
     data: { titulo: 'Busqueda' },
+  },
+  {
+    path: 'direccion_financiera',
+    component: DireccionFinancieraComponent,
+    data: { titulo: 'Dirección Financiera' },
+  },
+  {
+    path: 'mantenimiento',
+    component: MantenimientoComponent,
+    data: { titulo: 'Mantenimiento' },
+  },
+  {
+    path: 'tesoreria',
+    component: TesoreriaComponent,
+    data: { titulo: 'Tesorería' },
   },
   //Ruta Admin
   {
