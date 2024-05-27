@@ -561,6 +561,24 @@
                               <div class="col-md-12 m-b-20">
                                 <input
                                   type="text"
+                                  formControlName="nombreEmpleadoProveedor"
+                                  class="form-control"
+                                  placeholder="Nombre Empleadpo Proveedor"
+                                />
+                                <div
+                                  *ngIf="
+                                    solicitudForm.get('concepto')?.invalid &&
+                                    solicitudForm.get('concepto')?.touched
+                                  "
+                                  class="text-danger"
+                                >
+                                  El proveedor/empleado no se encuentra
+                                  registrado
+                                </div>
+                              </div>
+                              <div class="col-md-12 m-b-20">
+                                <input
+                                  type="text"
                                   formControlName="concepto"
                                   class="form-control"
                                   placeholder="Concepto"
@@ -735,33 +753,36 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="footable-even">
+                      <tr
+                        class="footable-even"
+                        *ngFor="let solicitudPago of nuevaSolicitudPagos"
+                      >
                         <!-- Fecha -->
-                        <td></td>
+                        <td>{{ solicitudPago.fechaHora }}</td>
                         <!-- Empresa -->
-                        <td></td>
+                        <td>{{ solicitudPago.empresa }}</td>
                         <!-- Área de operación -->
-                        <td></td>
+                        <td>{{ solicitudPago.areaOperacion }}</td>
                         <!-- Dependencia -->
-                        <td></td>
+                        <td>{{ solicitudPago.dependencia }}</td>
                         <!-- Rubro -->
-                        <td></td>
+                        <td>{{ solicitudPago.rubro }}</td>
                         <!-- Tipo -->
-                        <td></td>
+                        <td>{{ solicitudPago.tipo }}</td>
                         <!-- Identificación -->
-                        <td></td>
+                        <td>{{ solicitudPago.identificacion }}</td>
                         <!-- Nombre proveedor / empleado -->
-                        <td></td>
+                        <td>{{ solicitudPago.nombreEmpleadoProveedor }}</td>
                         <!-- Concepto -->
-                        <td></td>
+                        <td>{{ solicitudPago.concepto }}</td>
                         <!-- Placa -->
-                        <td></td>
+                        <td>{{ solicitudPago.placa }}</td>
                         <!-- Valor operación -->
-                        <td></td>
+                        <td>{{ solicitudPago.valorOperacion }}</td>
                         <!-- Factura -->
-                        <td></td>
+                        <td>{{ solicitudPago.factura }}</td>
                         <!-- Observaciones -->
-                        <td></td>
+                        <td>{{ solicitudPago.observaciones }}</td>
                         <!-- Acciones -->
                         <td>
                           <button

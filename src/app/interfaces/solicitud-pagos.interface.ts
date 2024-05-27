@@ -1,11 +1,12 @@
 export interface SolicitudPago {
-  fechaHora: string;
+  fechaHora: Date;
   empresa: string;
   areaOperacion: string;
   dependencia: string;
   rubro: string;
   tipo: string;
   identificacion: number;
+  nombreEmpleadoProveedor: string;
   concepto: string;
   placa: string;
   valorOperacion: number;

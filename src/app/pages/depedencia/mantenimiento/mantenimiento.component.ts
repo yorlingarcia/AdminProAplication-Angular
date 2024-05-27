@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SolicitudPago } from '../../../interfaces/solicitud-pagos.interface';
 
 @Component({
   selector: 'app-mantenimiento',
@@ -7,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class MantenimientoComponent implements OnInit {
   fechaActual: string; // Consulta de fecha y hora actual
-  nuevaSolicitudPagos: Array<String> = [];
+  nuevaSolicitudPagos: Array<SolicitudPago> = [];
   solicitudForm: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.fechaActual = this.obtenerFechaActual();
@@ -19,6 +20,7 @@ export class MantenimientoComponent implements OnInit {
       rubro: ['', Validators.required],
       tipo: ['', Validators.required],
       identificacion: ['', Validators.required],
+      nombreEmpleadoProveedor: ['', Validators.required],
       concepto: ['', Validators.required],
       placa: ['', Validators.required],
       valorOperacion: ['', Validators.required],
@@ -37,8 +39,8 @@ export class MantenimientoComponent implements OnInit {
   guardarSolicitud(): void {
     if (this.solicitudForm.valid) {
       // Aquí puedes guardar la información en una variable llamada nuevaSolicitudPagos
-      const nuevaSolicitudPagos = this.solicitudForm.value;
-      console.log(nuevaSolicitudPagos);
+      this.nuevaSolicitudPagos.push(this.solicitudForm.value);
+      console.log(this.nuevaSolicitudPagos);
       // Limpia el formulario después de guardar
       this.solicitudForm.reset();
     } else {
