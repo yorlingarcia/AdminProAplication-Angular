@@ -11,14 +11,14 @@ import { UsuarioService } from '../../services/usuario.service';
 import { LoginForm } from '../../interfaces/login-form.interface';
 import { SwalModal } from '../../config/swal.adapter';
 
-declare const google: any;
+// declare const google: any;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements AfterViewInit {
+export class LoginComponent {
   @ViewChild('googleBtn') googleBtn!: ElementRef;
   public loginForm = this.fb.group({
     email: [
@@ -35,23 +35,23 @@ export class LoginComponent implements AfterViewInit {
     private swalModal: SwalModal,
     private ngZone: NgZone
   ) {}
-  ngAfterViewInit(): void {
-    this.googleInit();
-    // google.accounts.id.prompt(); // also display the One Tap dialog
-  }
+  // ngAfterViewInit(): void {
+  //   this.googleInit();
+  //   // google.accounts.id.prompt(); // also display the One Tap dialog
+  // }
 
-  googleInit() {
-    google.accounts.id.initialize({
-      client_id:
-        '26805093594-ee1ag8sdsp5eufv5b2eb13u1q226082b.apps.googleusercontent.com',
-      callback: (response: any) => this.handleCredentialResponse(response),
-    });
-    google.accounts.id.renderButton(
-      // document.getElementById('buttonDiv'),
-      this.googleBtn.nativeElement,
-      { theme: 'outline', size: 'large' } // customization attributes
-    );
-  }
+  // googleInit() {
+  //   google.accounts.id.initialize({
+  //     client_id:
+  //       '26805093594-ee1ag8sdsp5eufv5b2eb13u1q226082b.apps.googleusercontent.com',
+  //     callback: (response: any) => this.handleCredentialResponse(response),
+  //   });
+  //   google.accounts.id.renderButton(
+  //     // document.getElementById('buttonDiv'),
+  //     this.googleBtn.nativeElement,
+  //     { theme: 'outline', size: 'large' } // customization attributes
+  //   );
+  // }
 
   handleCredentialResponse(response: any) {
     // console.log('Encoded JWT ID token: ' + response.credential);

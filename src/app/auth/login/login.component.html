@@ -21,6 +21,8 @@
             src="../assets/images/logo-text.png"
             alt="Home"
         /></a>
+
+        <!-- Campo de Email -->
         <div class="form-group m-t-40">
           <div class="col-xs-12">
             <input
@@ -29,8 +31,25 @@
               type="text"
               placeholder="Email"
             />
+            <!-- Mensaje de error si el campo es inválido -->
+            <div
+              *ngIf="
+                loginForm.get('email')?.invalid &&
+                loginForm.get('email')?.touched
+              "
+              class="text-danger"
+            >
+              <span *ngIf="loginForm.get('email')?.errors?.['required']">
+                El correo es obligatorio.
+              </span>
+              <span *ngIf="loginForm.get('email')?.errors?.['email']">
+                Debe ser un correo válido.
+              </span>
+            </div>
           </div>
         </div>
+
+        <!-- Campo de Password -->
         <div class="form-group">
           <div class="col-xs-12">
             <input
@@ -39,8 +58,22 @@
               type="password"
               placeholder="Password"
             />
+            <!-- Mensaje de error si el campo es inválido -->
+            <div
+              *ngIf="
+                loginForm.get('password')?.invalid &&
+                loginForm.get('password')?.touched
+              "
+              class="text-danger"
+            >
+              <span *ngIf="loginForm.get('password')?.errors?.['required']">
+                La contraseña es obligatoria.
+              </span>
+            </div>
           </div>
         </div>
+
+        <!-- Campo de Recordar contraseña -->
         <div class="form-group row">
           <div class="col-md-12">
             <div class="checkbox checkbox-primary pull-left p-t-0">
@@ -60,43 +93,20 @@
             >
           </div>
         </div>
+
+        <!-- Botón de inicio de sesión -->
         <div class="form-group text-center m-t-20">
           <div class="col-xs-12">
             <button
               class="btn btn-info btn-lg btn-block text-uppercase btn-rounded"
               type="submit"
+              [disabled]="!loginForm.valid"
             >
               Log In
             </button>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-            <!-- <div class="social">
-              <a
-                href="javascript:void(0)"
-                class="btn btn-facebook"
-                data-toggle="tooltip"
-                title="Login with Facebook"
-              >
-                <i aria-hidden="true" class="fa fa-facebook"></i>
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="btn btn-googleplus"
-                data-toggle="tooltip"
-                title="Login with Google"
-              >
-                <i aria-hidden="true" class="fa fa-google-plus"></i>
-              </a>
-            </div> -->
-            <div
-              #googleBtn
-              id="buttonDiv"
-              class="d-flex justify-content-center"
-            ></div>
-          </div>
-        </div>
+
         <div class="form-group my-2">
           <div class="col-sm-12 text-center">
             Don't have an account?
@@ -106,6 +116,8 @@
           </div>
         </div>
       </form>
+
+      <!-- Formulario de recuperación de contraseña -->
       <form class="form-horizontal" id="recoverform" action="index.html">
         <div class="form-group">
           <div class="col-xs-12">
@@ -139,6 +151,7 @@
     </div>
   </div>
 </section>
+
 <!-- ============================================================== -->
 <!-- End Wrapper -->
 <!-- ============================================================== -->
