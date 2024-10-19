@@ -28,6 +28,8 @@ export class LoginComponent {
     password: ['', [Validators.required]],
     remember: [false],
   });
+  // Variable para controlar si la contraseña está visible
+  public showPassword: boolean = false;
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -79,5 +81,10 @@ export class LoginComponent {
         this.swalModal.modalFire('Error', err.error.message, 'error');
       }
     );
+  }
+
+  // Método para alternar la visibilidad de la contraseña
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }
