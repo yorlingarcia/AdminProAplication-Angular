@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsuarioService } from '../../services/usuario.service';
-import { SwalModal } from '../../config/swal.adapter';
+import { UsuarioService } from '../../../services/usuario.service';
+import { SwalModal } from '../../../config/swal.adapter';
 import { Router } from '@angular/router';
 
 @Component({

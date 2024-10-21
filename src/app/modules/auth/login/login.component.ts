@@ -7,9 +7,9 @@ import {
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../../services/usuario.service';
-import { LoginForm } from '../../interfaces/login-form.interface';
-import { SwalModal } from '../../config/swal.adapter';
+import { UsuarioService } from '../../../services/usuario.service';
+import { LoginForm } from '../../../interfaces/login-form.interface';
+import { SwalModal } from '../../../config/swal.adapter';
 
 // declare const google: any;
 
