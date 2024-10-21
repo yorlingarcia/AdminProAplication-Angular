@@ -1,157 +1,145 @@
-<div class="fixed inset-0 z-50" *ngIf="isSidebarOpen">
-  <!-- Overlay oscuro -->
-  <div
-    class="fixed inset-0 bg-black bg-opacity-50"
-    (click)="closeSettingsSidebar()"
-  ></div>
-
-  <!-- Sidebar de configuración -->
-  <div
-    class="fixed right-0 top-0 w-80 bg-gray-100 shadow-lg h-screen p-6 transition-transform transform translate-x-0"
-  >
-    <!-- Botón de cierre -->
-    <button
-      (click)="closeSettingsSidebar()"
-      class="absolute top-4 right-4 text-gray-600"
-    >
-      <i class="pi pi-times text-2xl"></i>
-    </button>
-
-    <!-- Sección de temas -->
-    <div class="mb-6">
-      <h3 class="text-xl font-semibold mb-2">Themes</h3>
-      <div class="flex space-x-3">
-        <div class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer"></div>
-        <div
-          class="w-8 h-8 rounded-full bg-green-500 cursor-pointer border-2 border-green-700"
-        ></div>
-        <div class="w-8 h-8 rounded-full bg-pink-500 cursor-pointer"></div>
-        <div class="w-8 h-8 rounded-full bg-orange-500 cursor-pointer"></div>
-        <div class="w-8 h-8 rounded-full bg-purple-500 cursor-pointer"></div>
-        <div class="w-8 h-8 rounded-full bg-red-500 cursor-pointer"></div>
-        <div class="w-8 h-8 rounded-full bg-cyan-500 cursor-pointer"></div>
-        <div class="w-8 h-8 rounded-full bg-yellow-500 cursor-pointer"></div>
-      </div>
+<div>
+  <!-- Sección de temas -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Themes</h3>
+    <div class="flex space-x-3">
+      <div
+        class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer"
+        (click)="changeTheme('default')"
+      ></div>
+      <div
+        class="w-8 h-8 rounded-full bg-green-500 cursor-pointer"
+        (click)="changeTheme('green-theme')"
+      ></div>
+      <div
+        class="w-8 h-8 rounded-full bg-pink-500 cursor-pointer"
+        (click)="changeTheme('pink-theme')"
+      ></div>
+      <div
+        class="w-8 h-8 rounded-full bg-gray-800 cursor-pointer"
+        (click)="changeTheme('dark-theme')"
+      ></div>
     </div>
+  </div>
 
-    <!-- Escala de tamaño de letra -->
-    <div class="mb-6">
-      <h3 class="text-xl font-semibold mb-2">Scale</h3>
-      <div class="flex items-center space-x-2">
-        <button
-          (click)="decreaseFontSize()"
-          class="w-6 h-6 bg-gray-300 rounded-full text-center flex items-center justify-center"
-        >
-          -
-        </button>
-        <div
-          *ngFor="let size of fontSizes; let i = index"
-          [ngClass]="{
-            'bg-green-500': i === selectedFontSize,
-            'bg-gray-300': i !== selectedFontSize
-          }"
-          class="w-6 h-6 rounded-full cursor-pointer"
-        ></div>
-        <button
-          (click)="increaseFontSize()"
-          class="w-6 h-6 bg-gray-300 rounded-full text-center flex items-center justify-center"
-        >
-          +
-        </button>
-      </div>
+  <!-- Escala de tamaño de letra -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Scale</h3>
+    <div class="flex items-center space-x-2">
+      <button
+        (click)="decreaseFontSize()"
+        class="w-6 h-6 bg-gray-300 rounded-full text-center flex items-center justify-center"
+      >
+        -
+      </button>
+      <div
+        *ngFor="let size of fontSizes; let i = index"
+        [ngClass]="{
+          'bg-green-500': i === selectedFontSize,
+          'bg-gray-300': i !== selectedFontSize
+        }"
+        class="w-6 h-6 rounded-full cursor-pointer"
+      ></div>
+      <button
+        (click)="increaseFontSize()"
+        class="w-6 h-6 bg-gray-300 rounded-full text-center flex items-center justify-center"
+      >
+        +
+      </button>
     </div>
+  </div>
 
-    <!-- Tipo de menú -->
-    <div class="mb-6">
-      <h3 class="text-xl font-semibold mb-2">Menu Type</h3>
-      <div class="space-y-2">
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="menuType"
-            class="mr-2"
-            [(ngModel)]="menuType"
-            value="Static"
-          />
-          Static
-        </label>
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="menuType"
-            class="mr-2"
-            [(ngModel)]="menuType"
-            value="Overlay"
-          />
-          Overlay
-        </label>
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="menuType"
-            class="mr-2"
-            [(ngModel)]="menuType"
-            value="Slim"
-          />
-          Slim
-        </label>
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="menuType"
-            class="mr-2"
-            [(ngModel)]="menuType"
-            value="SlimPlus"
-          />
-          Slim+
-        </label>
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="menuType"
-            class="mr-2"
-            [(ngModel)]="menuType"
-            value="Drawer"
-          />
-          Drawer
-        </label>
-      </div>
-    </div>
-
-    <!-- Esquema de color -->
-    <div class="mb-6">
-      <h3 class="text-xl font-semibold mb-2">Color Scheme</h3>
-      <div class="space-y-2">
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="colorScheme"
-            class="mr-2"
-            [(ngModel)]="colorScheme"
-            value="Light"
-          />
-          Light
-        </label>
-        <label class="flex items-center">
-          <input
-            type="radio"
-            name="colorScheme"
-            class="mr-2"
-            [(ngModel)]="colorScheme"
-            value="Dark"
-          />
-          Dark
-        </label>
-      </div>
-    </div>
-
-    <!-- Ripple Effect -->
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Ripple Effect</h3>
+  <!-- Tipo de menú -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Menu Type</h3>
+    <div class="space-y-2">
       <label class="flex items-center">
-        <input type="checkbox" [(ngModel)]="rippleEffect" class="mr-2" />
-        Enable Ripple Effect
+        <input
+          type="radio"
+          name="menuType"
+          class="mr-2"
+          [(ngModel)]="menuType"
+          value="Static"
+        />
+        Static
+      </label>
+      <label class="flex items-center">
+        <input
+          type="radio"
+          name="menuType"
+          class="mr-2"
+          [(ngModel)]="menuType"
+          value="Overlay"
+        />
+        Overlay
+      </label>
+      <label class="flex items-center">
+        <input
+          type="radio"
+          name="menuType"
+          class="mr-2"
+          [(ngModel)]="menuType"
+          value="Slim"
+        />
+        Slim
+      </label>
+      <label class="flex items-center">
+        <input
+          type="radio"
+          name="menuType"
+          class="mr-2"
+          [(ngModel)]="menuType"
+          value="SlimPlus"
+        />
+        Slim+
+      </label>
+      <label class="flex items-center">
+        <input
+          type="radio"
+          name="menuType"
+          class="mr-2"
+          [(ngModel)]="menuType"
+          value="Drawer"
+        />
+        Drawer
       </label>
     </div>
+  </div>
+
+  <!-- Esquema de color -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Color Scheme</h3>
+    <div class="space-y-2">
+      <label class="flex items-center">
+        <input
+          type="radio"
+          name="colorScheme"
+          class="mr-2"
+          [(ngModel)]="colorScheme"
+          value="Light"
+        />
+        Light
+      </label>
+      <label class="flex items-center">
+        <input
+          type="radio"
+          name="colorScheme"
+          class="mr-2"
+          [(ngModel)]="colorScheme"
+          value="Dark"
+        />
+        Dark
+      </label>
+    </div>
+  </div>
+
+  <!-- Sección para habilitar o deshabilitar Ripple Effect -->
+  <div>
+    <h3 class="text-xl font-semibold mb-2">Ripple Effect</h3>
+    <p-inputSwitch
+      [(ngModel)]="rippleEffect"
+      (onChange)="toggleRippleEffect()"
+    ></p-inputSwitch>
+    <span class="ml-2">Enable Ripple Effect</span>
   </div>
 </div>

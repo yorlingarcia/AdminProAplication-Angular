@@ -6,13 +6,18 @@ import { Component } from '@angular/core';
   styleUrl: './main-layout.component.css',
 })
 export class MainLayoutComponent {
-  isSettingsSidebarOpen = false;
+  isSettingsSidebarOpen = false; // Asegúrate de que esté inicializado en false
+  rippleEffect = true; // Variable para controlar el ripple effect desde el main
 
   toggleSettingsSidebar() {
     this.isSettingsSidebarOpen = !this.isSettingsSidebarOpen;
+    console.log(
+      'Sidebar toggle called. Current state:',
+      this.isSettingsSidebarOpen
+    ); // Agrega un log para verificar el cambio
   }
 
-  closeSettingsSidebar() {
-    this.isSettingsSidebarOpen = false;
+  setRippleEffect(value: boolean) {
+    this.rippleEffect = value;
   }
 }

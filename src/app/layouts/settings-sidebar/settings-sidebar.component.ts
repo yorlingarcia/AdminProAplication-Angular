@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-settings-sidebar',
@@ -6,18 +6,30 @@ import { Component } from '@angular/core';
   styleUrl: './settings-sidebar.component.css',
 })
 export class SettingsSidebarComponent {
-  isSidebarOpen = true; // Esto lo manejarás desde el componente padre
+  @Output() rippleEffectChange = new EventEmitter<boolean>(); // Emitir cambios del ripple effect
+  isSidebarOpen = false;
 
   fontSizes = [12, 14, 16, 18, 20];
   selectedFontSize = 2;
-
   menuType = 'Static';
   colorScheme = 'Light';
   rippleEffect = true;
 
-  // Método para cerrar el sidebar
   closeSettingsSidebar() {
     this.isSidebarOpen = false;
+  }
+
+  changeTheme(theme: string) {
+    // Aquí iría la lógica para cambiar el tema
+    document.body.classList.remove(
+      'default-theme',
+      'green-theme',
+      'pink-theme',
+      'dark-theme'
+    );
+    if (theme) {
+      document.body.classList.add(theme);
+    }
   }
 
   decreaseFontSize() {
@@ -39,5 +51,10 @@ export class SettingsSidebarComponent {
       '--font-size',
       `${this.fontSizes[this.selectedFontSize]}px`
     );
+  }
+
+  toggleRippleEffect() {
+    // Emitir el estado del ripple effect hacia el main layout
+    this.rippleEffectChange.emit(this.rippleEffect);
   }
 }

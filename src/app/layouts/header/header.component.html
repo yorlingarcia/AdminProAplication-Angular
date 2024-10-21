@@ -1,21 +1,26 @@
-<header class="bg-white shadow p-4 flex justify-between items-center">
-  <!-- Logo -->
-  <div class="flex items-center space-x-3">
-    <img src="assets/images/logo.png" alt="Logo" class="h-8" />
-    <span class="text-lg font-semibold">Atlantis</span>
+<header class="bg-white shadow-md p-4 flex justify-between items-center">
+  <!-- Logo y Título -->
+  <div class="flex items-center">
+    <img src="assets/images/logo.png" alt="Logo" class="h-8 mr-3" />
+    <span class="text-lg font-semibold">Mi Aplicación</span>
   </div>
 
-  <!-- Barra de acciones -->
+  <!-- Menú del usuario -->
   <ul class="flex items-center space-x-4">
     <li><i class="pi pi-search text-xl"></i></li>
     <li><i class="pi pi-bell text-xl"></i></li>
-    <li><i class="pi pi-cog text-xl"></i></li>
+    <li><i class="pi pi-user text-xl"></i></li>
     <li>
+      <!-- Imagen del usuario -->
       <img
-        src="assets/images/user.png"
+        src="assets/images/user.jpg"
         alt="User"
-        class="h-8 w-8 rounded-full"
+        class="w-8 h-8 rounded-full cursor-pointer"
+        (click)="userMenu.toggle($event)"
       />
+
+      <!-- Menú desplegable -->
+      <p-menu #userMenu [popup]="true" [model]="items"></p-menu>
     </li>
   </ul>
 </header>

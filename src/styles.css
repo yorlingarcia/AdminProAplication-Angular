@@ -17,3 +17,43 @@ body {
 .cursor {
   cursor: pointer;
 }
+
+/* Variables de color por defecto (Light Theme) */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --button-background: #3498db;
+  --button-text: #ffffff;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --primary-color: #1abc9c;
+  --secondary-color: #f39c12;
+  --background-color: #333333;
+  --text-color: #ffffff;
+  --button-background: #1abc9c;
+  --button-text: #ffffff;
+}
+
+/* Green Theme */
+.green-theme {
+  --primary-color: #27ae60;
+  --secondary-color: #2980b9;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --button-background: #27ae60;
+  --button-text: #ffffff;
+}
+
+/* Pink Theme */
+.pink-theme {
+  --primary-color: #e91e63;
+  --secondary-color: #9c27b0;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --button-background: #e91e63;
+  --button-text: #ffffff;
+}

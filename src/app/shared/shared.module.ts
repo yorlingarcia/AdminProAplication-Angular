@@ -7,9 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { FormsModule } from '@angular/forms';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
-  declarations: [SidebarComponent, BreadcrumbsComponent],
+  declarations: [SidebarComponent, BreadcrumbsComponent, ButtonComponent],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [SidebarComponent, BreadcrumbsComponent],
 })
