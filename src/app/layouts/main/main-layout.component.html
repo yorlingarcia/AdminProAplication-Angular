@@ -1,0 +1,29 @@
+<div class="layout flex flex-col min-h-screen">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Estructura principal con sidebar y contenido -->
+  <div class="flex flex-grow">
+    <!-- Sidebar de navegación -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Contenido principal donde se cargan las vistas -->
+    <div class="flex-grow p-6">
+      <router-outlet></router-outlet>
+      <!-- Aquí se cargarán las páginas -->
+    </div>
+
+    <!-- Sidebar flotante para configuración -->
+    <button
+      class="fixed bottom-8 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition"
+      (click)="toggleSettingsSidebar()"
+    >
+      <i class="pi pi-cog text-2xl"></i>
+    </button>
+
+    <app-settings-sidebar *ngIf="isSettingsSidebarOpen"></app-settings-sidebar>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

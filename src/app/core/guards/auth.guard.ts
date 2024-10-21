@@ -1,9 +1,9 @@
+import { CanActivateFn, Router } from '@angular/router';
+import { UsuarioService } from '../../services/usuario.service';
 import { inject } from '@angular/core';
-import { CanActivateChildFn, Router } from '@angular/router';
 import { tap } from 'rxjs';
-import { UsuarioService } from '../services/usuario.service';
 
-export const authLoadGuard: CanActivateChildFn = (childRoute, state) => {
+export const authGuard: CanActivateFn = (route, state) => {
   const userService = inject(UsuarioService);
   const router = inject(Router);
 

@@ -15,15 +15,16 @@ import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
 import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.component';
 import { MedicoComponent } from './mantenimiento/medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
-import { adminGuard } from '../guards/admin.guard';
+import { adminGuard } from '../core/guards/admin.guard';
 import { DireccionFinancieraComponent } from './depedencia/direccion-financiera/direccion-financiera.component';
 import { MantenimientoComponent } from './depedencia/mantenimiento/mantenimiento.component';
 import { TesoreriaComponent } from './depedencia/tesoreria/tesoreria.component';
+import { MainLayoutComponent } from '../layouts/main/main-layout.component';
 
 const childRoutes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    component: MainLayoutComponent,
     data: { titulo: 'Dashboard' },
   },
   {
