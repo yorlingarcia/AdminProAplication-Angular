@@ -1,5 +1,55 @@
-<aside class="w-64 bg-gray-50 p-4 shadow-md h-full">
+<aside class="w-64 bg-gray-50 p-4 shadow-md h-full overflow-auto">
   <nav class="space-y-4">
+    <ul>
+      <li class="">
+        <a
+          class="has-arrow waves-effect waves-dark"
+          href="#"
+          aria-expanded="false"
+          ><img [src]="usuario.getImgUrl" alt="user" /><span class="hide-menu"
+            >{{ usuario.name }}
+          </span></a
+        >
+        <ul>
+          <li>
+            <a routerLinkActive="active" routerLink="perfil">My Profile </a>
+          </li>
+          <li><a href="javascript:void()">My Balance</a></li>
+          <li><a href="javascript:void()">Inbox</a></li>
+          <li>
+            <a routerLink="account-settings">Account Setting</a>
+          </li>
+          <li><a (click)="logOut()" style="cursor: pointer">Logout</a></li>
+        </ul>
+      </li>
+      <li class="nav-devider"></li>
+      <li class="nav-small-cap">PERSONAL</li>
+      <li *ngFor="let item of sidebarService.menu as any">
+        <a
+          class="has-arrow waves-effect waves-dark"
+          href="#"
+          aria-expanded="false"
+        >
+          <i [class]="item.icono"></i>
+          <span class="hide-menu"
+            >{{ item.titulo }}
+            <span class="label label-rouded label-themecolor pull-right">{{
+              item.submenu.length
+            }}</span></span
+          ></a
+        >
+        <ul aria-expanded="false" class="collapse">
+          <li *ngFor="let subitem of item.submenu">
+            <a
+              [routerLink]="subitem.url"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >{{ subitem.titulo }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
     <!-- Sección Dashboards -->
     <div>
       <h4 class="text-sm text-gray-600 uppercase">Dashboards</h4>
@@ -37,4 +87,57 @@
       </ul>
     </div>
   </nav>
+  <!-- <p-panelMenu [model]="items" styleClass="w-full"></p-panelMenu> -->
+
+  <p-accordion>
+    <p-accordionTab header="Dashboards">
+      <ul>
+        <li class="flex items-center p-2 hover:bg-gray-200 rounded">
+          <i class="pi pi-home mr-2"></i>
+          <a routerLink="/e-commerce" class="text-gray-700">E-Commerce</a>
+        </li>
+      </ul>
+    </p-accordionTab>
+
+    <p-accordionTab header="Apps">
+      <ul>
+        <li class="flex items-center p-2 hover:bg-gray-200 rounded">
+          <i class="pi pi-comments mr-2"></i>
+          <a routerLink="/blog" class="text-gray-700">Blog</a>
+        </li>
+        <li class="flex items-center p-2 hover:bg-gray-200 rounded">
+          <i class="pi pi-list mr-2"></i>
+          <a routerLink="/blog/list" class="text-gray-700">List</a>
+        </li>
+      </ul>
+    </p-accordionTab>
+
+    <p-accordionTab header="UI Kit">
+      <ul>
+        <li class="flex items-center p-2 hover:bg-gray-200 rounded">
+          <i class="pi pi-sliders-h mr-2"></i>
+          <a routerLink="/form-layout" class="text-gray-700">Form Layout</a>
+        </li>
+        <li class="flex items-center p-2 hover:bg-gray-200 rounded">
+          <i class="pi pi-table mr-2"></i>
+          <a routerLink="/table" class="text-gray-700">Table</a>
+        </li>
+      </ul>
+    </p-accordionTab>
+  </p-accordion>
+
+  <p-accordion [activeIndex]="0">
+    <p-accordionTab header="Header I">
+      <p>Lorem ipsum dolor sit amet...</p>
+    </p-accordionTab>
+    <p-accordionTab header="Header II">
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium...
+      </p>
+    </p-accordionTab>
+    <p-accordionTab header="Header III">
+      <p>At vero eos et accusamus et iusto odio dignissimos...</p>
+    </p-accordionTab>
+  </p-accordion>
 </aside>
